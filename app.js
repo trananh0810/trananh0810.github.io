@@ -1,6 +1,6 @@
-var exampleApp = angular.module('myApp', []);
+$(function(){
+    var location = window.location;
 
-exampleApp.controller('myController', function(){
-
+    $('.fb-comments').attr('data-href', Location);
+    
 })
-
