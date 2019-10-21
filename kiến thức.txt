@@ -1,8 +1,0 @@
-- Tạo 1 app angularjs:
-+ Trong js: khai báo 1 biến toàn cục là angularjs app: var varApp = anglar.module("nameApp",[]);
-		 "đối số thứ 2 là các thư viện phụ thuộc, ở đây k sử dụng thư viện nào thì khai báo mảng rỗng";
-+ Trong html khai báo attr: ng-app="appName";
-
-- Tạo 1 controller:
-+ Trong js: sử dụng varApp.controller("controllerName", function(){});
-+ Trong html: trong thẻ muốn controller điều khiển khai báo attr: ng-controller="controllerName";
