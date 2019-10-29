@@ -1,3 +1,4 @@
+
 /* menu */
 #div-menu{
     position: fixed;
@@ -50,7 +51,131 @@
     background-color: black;
     opacity: 0.3;
 }
+#div-home-body{
+    position: absolute;
+    top: 33.33%;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+#div-home-body>div:first-child, #div-home-body>div:nth-child(3){
+    font-size: 1.5rem;
+    line-height: 32px;
+}
+#div-home-body>div:nth-child(3)::after{
+    content: " ";
+    height: 100%;
+    border: 1px solid white;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-left: 5px;
+    animation: cursorText 1.5s steps(5, start) infinite;
+}
+#div-home-body>div:nth-child(2){
+    font-weight: 800;
+    font-size: 4.5rem;    
+}
+#div-home-body>div:last-child>a{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    transition: 0.3s;
+    cursor: pointer;
+}
+#div-home-body>div:last-child>a:hover{
+    border: 1px solid #82b440;
+    background-color: #82b440;
+}
+#div-home-body a{
+    color: white;
+}
+#div-home-bottom{
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#div-home-bottom>a{
+    position: relative;
+    width: 26px;
+    height: 42px;
+    border: 2px solid white;
+    border-radius: 26px;
+}
+#div-home-bottom>a::after{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -2px;
+    width: 4px;
+    height: 4px;
+    content: '';
+    transform: translateY(0) scaleY(1) scaleX(1) translateZ(0);
+    opacity: 1;
+    border-radius: 100%;
+    background-color: white;
+    animation: scroll 1.5s -1s cubic-bezier(.68,-.55,.265,1.55) infinite;
+}
 /* end home */
+
+
+/* animation */
+@keyframes cursorText{
+    to{
+        visibility: hidden;
+    }
+}
+@keyframes scroll {
+    0% , 20% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1) translateZ(0);
+        transform: translateY(0) scaleY(1) scaleX(1) translateZ(0)
+    }
+    10% {
+        -webkit-transform: translateY(0) scaleY(1.2) scaleX(1.2) translateZ(0);
+        transform: translateY(0) scaleY(1.2) scaleX(1.2) translateZ(0);
+        opacity: 1;
+        
+    }
+    50%{
+        margin-left: -1px;
+        width: 3px;
+        height: 5px;
+        opacity: 0.5;
+    }
+    90% {
+        -webkit-transform: translateY(20 px) scaleY(2.5) scaleX(.5) translateZ(0);
+        transform: translateY(20 px) scaleY(2.5) scaleX(.5) translateZ(0);
+        opacity: .01;
+        top: 80%;
+        width: 2px;
+        height: 10px;
+        margin-left: -1px;
+    }
+    to{
+        -webkit-transform: translateY(20 px) scaleY(2.5) scaleX(.5) translateZ(0);
+        transform: translateY(20 px) scaleY(2.5) scaleX(.5) translateZ(0);
+        opacity: .01;
+        top: 80%;
+        width: 2px;
+        height: 10px;
+        margin-left: -1px;
+    }
+}
+/* end animation */
 
 
 
@@ -60,5 +185,19 @@
 @media (max-width : 991.98px ){
     #div-menu{
         height: auto!important;
+    }
+    #div-home-body>div:first-child, #div-home-body>div:nth-child(3){
+        font-size: 1.3rem;
+    }
+    #div-home-body>div:nth-child(2){
+        font-size: 3rem;    
+    }
+}
+@media (max-width : 575.98px ){
+    #div-home-body>div:first-child, #div-home-body>div:nth-child(3){
+        font-size: 1rem;
+    }
+    #div-home-body>div:nth-child(2){
+        font-size: 2rem;    
     }
 }
