@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 
 <head>
-    <title>CV Trần Đức Anh</title>
+    <title>Trần Đức Anh</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,28 +10,51 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
+    <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./themes/css/index.css">
 </head>
 
-<body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0&appId=785849241779275&autoLogAppEvents=1"></script>
-
-    <div class="container" ng-controller="myController">
-        <div class="row">
-            <div class="col-12">
-                <h1>Hello AngularJS!</h1>
+<body style="height: 5000px;">
+    <!-- menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center" id="div-menu">
+        <div class="container text-center">
+            <a class="navbar-brand text-center" href="#">Trần Anh</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border-color:black">
+                <i class="fas fa-bars" style="color: black;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link a-menu-item" href="#">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a-menu-item" href="#">THÔNG TIN VỀ TÔI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a-menu-item" href="#">HỌC TẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a-menu-item" href="#">KINH NGHIỆM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a-menu-item" href="#">DƯ ÁN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a-menu-item" href="#">LIÊN HỆ</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+    <!-- end menu -->
 
-        <div class="row">
-            <div class="col-12">
-                <div class="fb-comments" data-href="https://trananh0810.github.io" data-width="" data-numposts="5">
-                </div>
-            </div>
-        </div>
+    <!-- home -->
+    <div id="div-home">
+        <div id="div-home-overlay"></div>
     </div>
+    <!-- end home -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -44,8 +67,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script src="./app.js"></script>
-
+    <script src="./lib/fontawesome/js/all.min.js"></script>
+    <script src="./themes/js/index.js"></script>
 </body>
 
 </html>

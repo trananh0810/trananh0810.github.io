@@ -1,0 +1,64 @@
+/* menu */
+#div-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 150px;
+    background-color: white!important;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom: 1px solid #eee;
+    /* border-color: transparent; */
+}
+.div-menu-show{
+    height: 70px!important;
+    opacity: 1!important;
+    visibility: visible!important;
+}
+.a-menu-item{
+    font-size: 13px;
+    transition: 0.3s;
+    color: black!important;
+}
+.a-menu-item:hover{
+    color: #82b440!important;
+}
+.a-menu-item-active{
+    color: #82b440;
+}
+/* end menu */
+
+
+/* home */
+#div-home{
+    width: 100%;
+    height: 100vh;
+    background: url(../../images/hero-1.jpg) no-repeat center bottom;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+#div-home-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+}
+/* end home */
+
+
+
+
+
+/* responsive */
+@media (max-width : 991.98px ){
+    #div-menu{
+        height: auto!important;
+    }
+}
