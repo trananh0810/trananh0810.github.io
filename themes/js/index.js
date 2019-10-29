@@ -7,6 +7,9 @@ $(function(){
     
     //hiệu ứng đánh chữ
     effectTyping();
+
+    //run progress bar
+    runProgressbar();
 })
 
 //show menu
@@ -41,4 +44,32 @@ var effectTyping = () => {
             clearInterval(intervalTyping);
         }
     }, typingSpeed);
+}
+
+//chạy progress bar
+var runProgressbar = () => {
+    var markJava        = 60;
+    var markHtml        = 50;
+    var markCss         = 50;
+    var markPts         = 50;
+    var markJquery      = 50;
+    var markBootstrap   = 50;
+
+    runProgressbarItem('#pgb-java', markJava);
+    runProgressbarItem('#pgb-html', markHtml);
+    runProgressbarItem('#pgb-css', markCss);
+    runProgressbarItem('#pgb-pts', markPts);
+    runProgressbarItem('#pgb-jquery', markJquery);
+    runProgressbarItem('#pgb-bootstrap', markBootstrap);
+}
+
+var runProgressbarItem = (selector, mark) => {
+    var markRun = 0;
+    setInterval(() => {
+        markRun++;
+
+        if (markRun <= mark){
+            $(selector).css('width', markRun + '%');
+        }
+    }, 10);
 }

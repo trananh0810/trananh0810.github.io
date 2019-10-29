@@ -1,4 +1,15 @@
-
+html {
+    scroll-behavior: smooth;
+}
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
 /* menu */
 #div-menu{
     position: fixed;
@@ -37,7 +48,7 @@
 #div-home{
     width: 100%;
     height: 100vh;
-    background: url(../../images/hero-1.jpg) no-repeat center bottom;
+    background: url(../../images/image1.JPG) no-repeat center bottom;
     background-attachment: fixed;
     background-size: cover;
     position: relative;
@@ -115,6 +126,7 @@
     height: 42px;
     border: 2px solid white;
     border-radius: 26px;
+    transition: 0.3s;
 }
 #div-home-bottom>a::after{
     position: absolute;
@@ -130,8 +142,54 @@
     background-color: white;
     animation: scroll 1.5s cubic-bezier(.68,-.55,.265,1.55) infinite;
 }
+#div-home-bottom>a:hover{
+    border: 2px solid #82b440;
+}
 /* end home */
 
+/* about */
+#p-about-intromyseft{
+    margin-top: 100px;
+    font-weight: 700;
+}
+#div-about-avatar{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#div-about-avatar>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.p-profile{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+#div-about-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn-download-cv{
+    height: 42px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+#btn-download-cv:hover{
+    border: 1px solid #82b440;
+    background-color: #82b440;
+    color: white;
+}
+/* end about */
 
 /* animation */
 @keyframes cursorText{
@@ -177,6 +235,9 @@
 
 /* responsive */
 @media (max-width : 991.98px ){
+    *{
+        font-size: 0.9rem;
+    }
     #div-menu{
         height: auto!important;
     }
@@ -186,6 +247,14 @@
     #div-home-body>div:nth-child(2){
         font-size: 3rem;    
     }
+    #p-about-intromyseft{
+        font-size: 2rem;
+    }
+}
+@media (max-width : 767.98px ){
+    #div-about-skill{
+        margin-top: 20px;
+    }
 }
 @media (max-width : 575.98px ){
     #div-home-body>div:first-child, #div-home-body>div:nth-child(3){
@@ -193,5 +262,8 @@
     }
     #div-home-body>div:nth-child(2){
         font-size: 2rem;    
+    }
+    #p-about-intromyseft{
+        font-size: 1.5rem;
     }
 }
