@@ -2,6 +2,7 @@ $(function() {
   $('.wrap-loading').css('display', 'none');
   //show menu
   showMenu();
+  activeMenu();
   $(window).scroll(() => {
     showMenu();
     activeMenu();
