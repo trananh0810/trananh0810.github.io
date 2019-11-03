@@ -1,4 +1,5 @@
 $(function() {
+  $('.wrap-loading').css('display', 'none');
   //show menu
   showMenu();
   $(window).scroll(() => {
