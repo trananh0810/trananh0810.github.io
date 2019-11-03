@@ -10,6 +10,7 @@ body{
 }
 a{
     color: black;
+    cursor: pointer;
 }
 a:hover{
     text-decoration: none;
@@ -35,6 +36,9 @@ a:hover{
     font-size: 12px!important;
     margin: 0!important;
 }
+.a-menu-active{
+    color: #82b440!important;
+}
 /* menu */
 #div-menu{
     position: fixed;
@@ -58,7 +62,6 @@ a:hover{
 .a-menu-item{
     font-size: 13px;
     transition: 0.3s;
-    color: black!important;
 }
 .a-menu-item:hover{
     color: #82b440!important;
@@ -88,8 +91,7 @@ a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
-    opacity: 0.3;
+    background-color: #00000096;
 }
 #div-home-body{
     position: absolute;
@@ -169,8 +171,8 @@ a:hover{
     opacity: 1;
     border-radius: 100%;
     background-color: white;
-    animation: scroll 1.5s cubic-bezier(.68,-.55,.265,1.55) infinite;
-    -webkit-animation: scroll 1.5s cubic-bezier(.68,-.55,.265,1.55) infinite;
+    animation: scroll 2s cubic-bezier(.68,-.55,.265,1.55) infinite;
+    -webkit-animation: scroll 2s cubic-bezier(.68,-.55,.265,1.55) infinite;
 }
 #div-home-bottom>a:hover{
     border: 2px solid #82b440;
@@ -210,12 +212,15 @@ a:hover{
 #btn-download-cv{
     width: 200px;
 }
+.prg-skill{
+    background-color: #82b440!important;
+}
 /* end about */
 
 /* work with me */
 #div-work-with-me{
     height: 245px;
-    background: url(../../images/parallax-3.jpg) no-repeat center center;
+    background: url(../../images/Wallpaper\ 4k\ -\ Hình\ nền\ 4k\ \ thiết\ kế\ cực\ đẹp.jpg) no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     position: relative;
@@ -334,6 +339,114 @@ a:hover{
 }
 /* end edu */
 
+/* experience */
+#div-experience{
+    padding-top: 100px;
+}
+/* end experience */
+
+/* statistical */
+#div-statistical{
+    position: relative;
+    height: 360px;
+    -webkit-background: url(../../images/Wallpaper\ 4k\ -\ Hình\ nền\ 4k\ \ thiết\ kế\ cực\ đẹp.jpg) no-repeat center center;
+    background: url(../../images/Wallpaper\ 4k\ -\ Hình\ nền\ 4k\ \ thiết\ kế\ cực\ đẹp.jpg) no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#div-statistical>.row{
+    height: 100%;
+}
+#div-statistical>.row>.col-12{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#div-statistical>.row>.col-12>span:first-child{
+    color: white;
+    font-size: 50px;
+}
+#div-statistical>.row>.col-12>span:last-child{
+    color: white;
+    font-size: 16px;
+}
+/* end statistical */
+
+/* event */
+#div-event{
+    padding-top: 100px;
+}
+.width1{
+    width: calc(100%/3);
+}
+.width2{
+    width: calc(200%/3);
+}
+.div-event-item{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.div-event-item>.div-overlay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    opacity: 0;
+}
+.div-event-item:hover img{
+    transform: scale(1.2);
+}
+.div-event-item:hover .div-overlay{
+    opacity: 1;
+}
+.div-event-item img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.div-event-item>.div-overlay>.a-icon-find{
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    color: white;
+}
+.div-event-item>.div-overlay>.a-icon-find:hover{
+    border: 1px solid #82b440;
+    background-color: #82b440;
+}
+/* end event */
+
+/* feedback */
+#div-feedback{
+    padding-top: 100px;
+}
+/* end feedback */
+
+/* footer */
+#div-footer{
+    background-color: #bdbbbb;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/* end footer */
 
 /* animation */
 @keyframes cursorText{
@@ -449,6 +562,15 @@ a:hover{
     #div-about-skill{
         margin-top: 20px;
     }
+    #div-statistical>.row>.col-12>span:last-child{
+        font-size: 13px;
+    }
+    .width1{
+        width: calc(100%/2);
+    }
+    .width2{
+        width: 100%;
+    }
 }
 @media (max-width : 575.98px ){
     #div-home-body>div:first-child, #div-home-body>div:nth-child(3){
@@ -456,6 +578,9 @@ a:hover{
     }
     #div-home-body>div:nth-child(2){
         font-size: 2rem;    
+    }
+    #div-home-bottom{
+        height: 35%;
     }
     .p-title-part{
         font-size: 1.5rem;
@@ -474,5 +599,11 @@ a:hover{
     }
     #div-home{
         background: #acf849;
+    }
+    .width1{
+        width: 100%;
+    }
+    #div-statistical{
+        padding-bottom: 20px;
     }
 }
