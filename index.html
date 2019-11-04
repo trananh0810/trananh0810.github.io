@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./themes/css/index.css">
 </head>
 
-<body">
+<body ng-controller="myController">
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=417051199189932&autoLogAppEvents=1"></script>
 
@@ -169,57 +169,12 @@
                             <p>Những kỹ năng tôi đã được học và làm việc</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-4" ng-repeat="item in listSkill">
                         <div class="col-12">
-                            <p class="p-profile">JAVA</p>
+                            <p class="p-profile">{{item.name}}</p>
                             <div class="progress">
-                                <div id="pgb-java" class="progress-bar bg-primary prg-skill" role="progressbar"
-                                    style="width: 0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <p class="p-profile">HTML</p>
-                            <div class="progress">
-                                <div id="pgb-html" class="progress-bar bg-primary prg-skill" role="progressbar"
-                                    style="width: 0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <p class="p-profile">CSS</p>
-                            <div class="progress">
-                                <div id="pgb-css" class="progress-bar bg-primary prg-skill" role="progressbar"
-                                    style="width: 0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <p class="p-profile">Photoshop</p>
-                            <div class="progress">
-                                <div id="pgb-pts" class="progress-bar bg-primary prg-skill" role="progressbar"
-                                    style="width: 0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <p class="p-profile">jQuery</p>
-                            <div class="progress">
-                                <div id="pgb-jquery" class="progress-bar bg-primary prg-skill" role="progressbar"
-                                    style="width: 0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <p class="p-profile">Bootstrap</p>
-                            <div class="progress">
-                                <div id="pgb-bootstrap" class="progress-bar bg-primary prg-skill" role="progressbar"
-                                    style="width: 0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div id="{{item.id}}" class="progress-bar bg-primary prg-skill" role="progressbar"
+                                    style="width: {{item.mark}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -258,7 +213,7 @@
         </div>
         <div class="row div-timeline">
             <div class="col-12">
-                <div class="row">
+                <div class="row" ng-repeat="item in listEdu">
                     <div class="col-12">
                         <div class="div-timeline-block">
                             <div class="div-timeline-icon">
@@ -266,93 +221,13 @@
                             </div>
                             <div class="div-block-content">
                                 <div class="div-block-content-body">
-                                    <h2>Cao đẳng</h2>
-                                    <span class="text-muted">Trường Cao đẳng FPT Polytechnic</span>
-                                    <p>Chuyên ngành Ứng dụng phần mềm</p>
-                                    <p class="p-time text-muted">Tháng 5/2018 đến nay</p>
+                                    <h2>{{item.level}}</h2>
+                                    <span class="text-muted">{{item.schoolName}}</span>
+                                    <p>{{item.detail}}</p>
+                                    <p class="p-time text-muted">{{item.time}}</p>
                                 </div>
                                 <div class="div-block-content-time">
-                                    Tháng 5/2018 đến nay
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="div-timeline-block">
-                            <div class="div-timeline-icon">
-                                <i class="fas fa-graduation-cap icon"></i>
-                            </div>
-                            <div class="div-block-content">
-                                <div class="div-block-content-body">
-                                    <h2>Trung học phổ thông</h2>
-                                    <span class="text-muted">Trường THPT Tam Dương - Vĩnh Phúc</span>
-                                    <p class="p-time text-muted">2010 - 2013</p>
-                                </div>
-                                <div class="div-block-content-time">
-                                    2010 - 2013
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="div-timeline-block">
-                            <div class="div-timeline-icon">
-                                <i class="fas fa-graduation-cap icon"></i>
-                            </div>
-                            <div class="div-block-content">
-                                <div class="div-block-content-body">
-                                    <h2>Trung học cơ sở</h2>
-                                    <span class="text-muted">Trường THCS Đồng Tĩnh - Tam Dương - Vĩnh Phúc</span>
-                                    <p class="p-time text-muted">2006 - 2010</p>
-                                </div>
-                                <div class="div-block-content-time">
-                                    2006 - 2010
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="div-timeline-block">
-                            <div class="div-timeline-icon">
-                                <i class="fas fa-graduation-cap icon"></i>
-                            </div>
-                            <div class="div-block-content">
-                                <div class="div-block-content-body">
-                                    <h2>Tiểu học</h2>
-                                    <span class="text-muted">Trường Tiểu học Đồng Tĩnh B - Tam Dương - Vĩnh Phúc</span>
-                                    <p class="p-time text-muted">2001 - 2006</p>
-                                </div>
-                                <div class="div-block-content-time">
-                                    2001 - 2006
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="div-timeline-block">
-                            <div class="div-timeline-icon">
-                                <i class="fas fa-graduation-cap icon"></i>
-                            </div>
-                            <div class="div-block-content">
-                                <div class="div-block-content-body">
-                                    <h2>Mẫu giáo</h2>
-                                    <span class="text-muted">Trường Mẫu giáo Đồng Tĩnh - Tam Dương - Vĩnh Phúc</span>
-                                    <p class="p-time text-muted">1998 - 2001</p>
-                                </div>
-                                <div class="div-block-content-time">
-                                    1998 - 2001
+                                    {{item.time}}
                                 </div>
                             </div>
                         </div>
@@ -372,7 +247,7 @@
         </div>
         <div class="row div-timeline">
             <div class="col-12">
-                <div class="row">
+                <div class="row" ng-repeat="item in listExperience">
                     <div class="col-12">
                         <div class="div-timeline-block">
                             <div class="div-timeline-icon">
@@ -380,32 +255,12 @@
                             </div>
                             <div class="div-block-content">
                                 <div class="div-block-content-body">
-                                    <h2>Công Ty TNHH Hệ Thống Thông Tin FPT</h2>
-                                    <span class="text-muted">Thực tập sinh Java</span>
-                                    <p class="p-time text-muted">Tháng 11/2019 đến nay</p>
+                                    <h2>{{item.company}}</h2>
+                                    <span class="text-muted">{{item.position}}</span>
+                                    <p class="p-time text-muted">{{item.time}}</p>
                                 </div>
                                 <div class="div-block-content-time">
-                                    Tháng 11/2019 đến nay
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="div-timeline-block">
-                            <div class="div-timeline-icon">
-                                <i class="fas fa-graduation-cap icon"></i>
-                            </div>
-                            <div class="div-block-content">
-                                <div class="div-block-content-body">
-                                    <h2>Công ty Cổ phần DV di động Thế Hệ Mới</h2>
-                                    <span class="text-muted">Nhân viên nhập liệu</span>
-                                    <p class="p-time text-muted">Tháng 8/2019 - Tháng 10/2019</p>
-                                </div>
-                                <div class="div-block-content-time">
-                                    Tháng 8/2019 - Tháng 10/2019
+                                    {{item.time}}
                                 </div>
                             </div>
                         </div>
@@ -421,15 +276,15 @@
         <div class="div-overlay"></div>
         <div class="row">
             <div class="col-sm-4 col-12">
-                <span id="span-project-completed">0</span>
+                <span id="span-project-completed" data-count="0">0</span>
                 <span>DỰ ÁN ĐÃ HOÀN THÀNH</span>
             </div>
             <div class="col-sm-4 col-12">
-                <span id="span-award">0</span>
+                <span id="span-award" data-count="10">0</span>
                 <span>GIẢI THƯỞNG</span>
             </div>
             <div class="col-sm-4 col-12">
-                <span id="span-current-project">0</span>
+                <span id="span-current-project" data-count="0">0</span>
                 <span>DỰ ÁN HIỆN TẠI</span>
             </div>
         </div>
@@ -445,70 +300,19 @@
         </div>
 
         <div class="row div-event-content" style="height: auto;">
-            <div class="div-event-item width1">
-                <a class="fancybox" data-fancybox="view-img-gold-bee-summer-2019" href="./images/IMG_1018.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 10 - 2019)">
-                    <img src="./images/IMG_1017.JPG" alt="">
-                </a>
+            <div class="div-event-item {{item.widthClass}}" ng-repeat="item in listEvent">
+                <img src="./images/{{item.thumnail}}" alt="" ng-cloack>
                 
                 <div class="div-overlay text-center">
-                    <span>Lễ vinh danh Ong Vàng  <br> Kỳ Summer 2019</span>
-                    <a class="a-icon-find fancybox" data-fancybox="view-img-gold-bee-summer-2019" href="./images/IMG_1017.JPG"
-                        data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 10 - 2019)">
+                    <span>{{item.eventName}}</span>
+                    <a class="a-icon-find fancybox" data-fancybox="{{item.fancybox}}" href="./images/{{item.thumnail}}"
+                        data-caption="{{item.caption}}">
                         <i class="fas fa-search"></i>
                     </a>
-                    <span>Tháng 10/2019</span>
+                    <span>{{item.time}}</span>
                 </div>
-                <a class="fancybox" data-fancybox="view-img-gold-bee-summer-2019" href="./images/IMG_1014.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 10 - 2019)"></a>
-                <a class="fancybox" data-fancybox="view-img-gold-bee-summer-2019" href="./images/IMG_1015.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 10 - 2019)"></a>
-            </div>
-
-            <div class="div-event-item width1">
-                <a class="fancybox" data-fancybox="view-img-gold-bee-spring-2019" href="./images/1.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 10 - 2019)">
-                    <img src="./images/1.JPG" alt="">
-                </a>
-                
-                <div class="div-overlay text-center">
-                    <span>Lễ vinh danh Ong Vàng  <br> Kỳ Spring 2019</span>
-                    <a class="a-icon-find fancybox" data-fancybox="view-img-gold-bee-spring-2019" href="./images/2.JPG"
-                        data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Spring 2019 (Tháng 6 - 2019)">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <span>Tháng 6/2019</span>
-                </div>
-                <a class="fancybox" data-fancybox="view-img-gold-bee-spring-2019" href="./images/3.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 6 - 2019)"></a>
-                <a class="fancybox" data-fancybox="view-img-gold-bee-spring-2019" href="./images/4.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 6 - 2019)"></a>
-                <a class="fancybox" data-fancybox="view-img-gold-bee-spring-2019" href="./images/5.JPG"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 6 - 2019)"></a>
-                <a class="fancybox" data-fancybox="view-img-gold-bee-spring-2019" href="./images/6.jpeg"
-                    data-caption="Lễ Tôn Vinh Ong Vàng Kỳ Summer 2019 (Tháng 6 - 2019)"></a>
-            </div>
-
-            <div class="div-event-item width1">
-                <a class="fancybox" data-fancybox="view-img-fpolycup-2019" href="./images/fpolycup-1.JPG"
-                    data-caption="Giải bóng đá FPOLY Cup 2019 (Tháng 3 - 2019)">
-                    <img src="./images/fpolycup-1.JPG" alt="">
-                </a>
-                
-                <div class="div-overlay text-center">
-                    <span>Giải bóng đá FPOLY Cup 2019</span>
-                    <a class="a-icon-find fancybox" data-fancybox="view-img-fpolycup-2019" href="./images/fpolycup-2.JPG"
-                        data-caption="Giải bóng đá FPOLY Cup 2019 (Tháng 3 - 2019)">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <span>Tháng 6/2019</span>
-                </div>
-                <a class="fancybox" data-fancybox="view-img-fpolycup-2019" href="./images/fpolycup-3.JPG"
-                    data-caption="Giải bóng đá FPOLY Cup 2019 (Tháng 3 - 2019)"></a>
-                <a class="fancybox" data-fancybox="view-img-fpolycup-2019" href="./images/fpolycup-4.JPG"
-                    data-caption="Giải bóng đá FPOLY Cup 2019 (Tháng 3 - 2019)"></a>
-                <a class="fancybox" data-fancybox="view-img-fpolycup-2019" href="./images/fpolycup-5.JPG"
-                    data-caption="Giải bóng đá FPOLY Cup 2019 (Tháng 3 - 2019)"></a>
+                <a class="fancybox" data-fancybox="{{item.fancybox}}" href="./images/{{item2}}"
+                    data-caption="{{item.caption}}" ng-repeat="item2 in item.imgs"></a>
             </div>
         </div>
     </div>
@@ -548,9 +352,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="./lib/fancybox/jquery.fancybox.min.js"></script>
-    <script src="./lib/isotope.pkgd.min.js"></script>
     <script src="./lib/fontawesome/js/all.min.js"></script>
+    <script src="./lib/angularjs/angular.min.js"></script>
+    <script src="./themes/js/indexAngularjs.js"></script>
+    <script src="./lib/isotope.pkgd.min.js"></script>
     <script src="./themes/js/index.js"></script>
-</body">
+</body>
 
 </html>

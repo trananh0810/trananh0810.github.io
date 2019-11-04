@@ -11,9 +11,6 @@ $(function() {
   //hiệu ứng đánh chữ
   effectTyping();
 
-  //run progress bar
-  runProgressbar();
-
   //run statistical
   runStatistical();
 
@@ -76,39 +73,11 @@ let effectTyping = () => {
   }, typingSpeed);
 };
 
-//chạy progress bar
-let runProgressbar = () => {
-  let markJava = 60;
-  let markHtml = 50;
-  let markCss = 50;
-  let markPts = 50;
-  let markJquery = 50;
-  let markBootstrap = 50;
-
-  runProgressbarItem("#pgb-java", markJava);
-  runProgressbarItem("#pgb-html", markHtml);
-  runProgressbarItem("#pgb-css", markCss);
-  runProgressbarItem("#pgb-pts", markPts);
-  runProgressbarItem("#pgb-jquery", markJquery);
-  runProgressbarItem("#pgb-bootstrap", markBootstrap);
-};
-
-let runProgressbarItem = (selector, mark) => {
-  let markRun = 0;
-  setInterval(() => {
-    markRun++;
-
-    if (markRun <= mark) {
-      $(selector).css("width", markRun + "%");
-    }
-  }, 10);
-};
-
 //chạy thống kê
 let runStatistical = () => {
-  let projectCompleted = 0;
-  let currentProject = 0;
-  let award = 10;
+  let projectCompleted = $('#span-project-completed').attr('data-count');
+  let currentProject = $('#span-current-project').attr('data-count');
+  let award = $('#span-award').attr('data-count');
 
   runStatisticalItem('#span-project-completed', projectCompleted);
   runStatisticalItem('#span-award', award);
