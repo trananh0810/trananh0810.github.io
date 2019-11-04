@@ -48,5 +48,5 @@ myApp.controller("myController", function($scope) {
       thumnail: 'fpolycup-1.JPG',
       imgs: ['fpolycup-2.JPG', 'fpolycup-3.JPG', 'fpolycup-4.JPG', 'fpolycup-5.JPG']
     }
-  ]
+  ];
 });

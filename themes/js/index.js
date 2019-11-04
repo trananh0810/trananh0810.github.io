@@ -14,11 +14,6 @@ $(function() {
   //run statistical
   runStatistical();
 
-  //isotope event
-  $(".div-event-content").isotope({
-    itemSelector: ".div-event-item"
-  });
-
   //fancybox
   $("[data-fancybox").fancybox({
     loop: true,
@@ -32,16 +27,6 @@ $(function() {
 
   //click menu
   clickMenu();
-
-  $.ajax({
-    url: "//api.ipify.org/?format=json",
-    dataType: "JSON",
-    success: function(data) {
-      console.log(data.ip);
-    }
-  })
-
-  countVisiter();
 });
 
 //show menu
@@ -160,17 +145,3 @@ let activeMenu = () => {
     $(".a-menu-feedback").addClass("a-menu-active");
   }
 };
-
-
-//count visiter
-let countVisiter = () => {
-  var obj = {a: "Hello", b: "World"};
-  saveText( JSON.stringify(obj), "filename.json" );
-}
-
-function saveText(text, filename){
-  var a = document.createElement('a');
-  a.setAttribute('href', 'data:text/plain;charset=utf-u,'+encodeURIComponent(text));
-  a.setAttribute('download', filename);
-  a.click()
-}
