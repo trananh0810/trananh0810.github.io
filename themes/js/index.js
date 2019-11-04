@@ -1,5 +1,5 @@
 $(function() {
-  $('.wrap-loading').css('display', 'none');
+  $(".wrap-loading").css("display", "none");
   //show menu
   showMenu();
   activeMenu();
@@ -15,29 +15,33 @@ $(function() {
   runStatistical();
 
   //isotope event
-  $('.div-event-content').isotope({
-    itemSelector: '.div-event-item'
+  $(".div-event-content").isotope({
+    itemSelector: ".div-event-item"
   });
 
   //fancybox
-  $('[data-fancybox').fancybox({
+  $("[data-fancybox").fancybox({
     loop: true,
     protect: true,
-    buttons: [
-      "zoom",
-      "share",
-      "slideShow",
-      "thumbs",
-      "close"
-    ],
+    buttons: ["zoom", "share", "slideShow", "thumbs", "close"],
     animationEffect: "zoom-in-out",
     zoomOpacity: "auto",
     transitionEffect: "zoom-in-out",
     beforeLoad: $.noop
-  });  
-    
-    //click menu
-    clickMenu();
+  });
+
+  //click menu
+  clickMenu();
+
+  $.ajax({
+    url: "//api.ipify.org/?format=json",
+    dataType: "JSON",
+    success: function(data) {
+      console.log(data.ip);
+    }
+  })
+
+  countVisiter();
 });
 
 //show menu
@@ -75,14 +79,14 @@ let effectTyping = () => {
 
 //chạy thống kê
 let runStatistical = () => {
-  let projectCompleted = $('#span-project-completed').attr('data-count');
-  let currentProject = $('#span-current-project').attr('data-count');
-  let award = $('#span-award').attr('data-count');
+  let projectCompleted = $("#span-project-completed").attr("data-count");
+  let currentProject = $("#span-current-project").attr("data-count");
+  let award = $("#span-award").attr("data-count");
 
-  runStatisticalItem('#span-project-completed', projectCompleted);
-  runStatisticalItem('#span-award', award);
-  runStatisticalItem('#span-current-project', currentProject);
-}
+  runStatisticalItem("#span-project-completed", projectCompleted);
+  runStatisticalItem("#span-award", award);
+  runStatisticalItem("#span-current-project", currentProject);
+};
 
 let runStatisticalItem = (selector, count) => {
   let countRun = 0;
@@ -93,52 +97,54 @@ let runStatisticalItem = (selector, count) => {
       $(selector).text(countRun);
     }
   }, 100);
-}
+};
 
 //click menu
 let clickMenu = () => {
-  $('.a-menu-home').click(() => {
-    $('html').animate({scrollTop: 0});
+  $(".a-menu-home").click(() => {
+    $("html").animate({ scrollTop: 0 });
   });
 
-  $('.a-menu-about').click(() => {
-    let top = $('#div-about').offset().top + 'px';
-    $('html').animate({scrollTop: top});
+  $(".a-menu-about").click(() => {
+    let top = $("#div-about").offset().top + "px";
+    $("html").animate({ scrollTop: top });
   });
 
-  $('.a-menu-edu').click(() => {
-    let top = $('#div-education').offset().top + 'px';
-    $('html').animate({scrollTop: top});
+  $(".a-menu-edu").click(() => {
+    let top = $("#div-education").offset().top + "px";
+    $("html").animate({ scrollTop: top });
   });
 
-  $('.a-menu-experience').click(() => {
-    let top = $('#div-experience').offset().top + 'px';
-    $('html').animate({scrollTop: top});
+  $(".a-menu-experience").click(() => {
+    let top = $("#div-experience").offset().top + "px";
+    $("html").animate({ scrollTop: top });
   });
 
-  $('.a-menu-event').click(() => {
-    let top = $('#div-event').offset().top + 'px';
-    $('html').animate({scrollTop: top});
+  $(".a-menu-event").click(() => {
+    let top = $("#div-event").offset().top + "px";
+    $("html").animate({ scrollTop: top });
   });
 
-  $('.a-menu-feedback').click(() => {
-    let top = $('#div-feedback').offset().top + 'px';
-    $('html').animate({scrollTop: top});
+  $(".a-menu-feedback").click(() => {
+    let top = $("#div-feedback").offset().top + "px";
+    $("html").animate({ scrollTop: top });
   });
-}
+};
 
 //active menu
 let activeMenu = () => {
   let indexWindow = $(window).scrollTop();
 
+  let topAbout = $("#div-about").offset().top - $("#div-about").height() / 2;
+  let topEdu =
+    $("#div-education").offset().top - $("#div-education").height() / 2;
+  let topExperience =
+    $("#div-experience").offset().top - $("#div-experience").height() / 2;
+  let topEvent = $("#div-event").offset().top - $("#div-event").height() / 2;
+  let topFeedback =
+    $("#div-feedback").offset().top - $("#div-feedback").height() / 2;
 
-  let topAbout = $('#div-about').offset().top - $('#div-about').height()/2;
-  let topEdu = $('#div-education').offset().top - $('#div-education').height()/2;
-  let topExperience = $('#div-experience').offset().top - $('#div-experience').height()/2;
-  let topEvent = $('#div-event').offset().top - $('#div-event').height()/2;
-  let topFeedback = $('#div-feedback').offset().top - $('#div-feedback').height()/2;
-
-  $('.a-menu-item').removeClass("a-menu-active");
+  $(".a-menu-item").removeClass("a-menu-active");
 
   if (indexWindow < topAbout) {
     $(".a-menu-home").addClass("a-menu-active");
@@ -153,4 +159,18 @@ let activeMenu = () => {
   } else if (indexWindow >= topFeedback) {
     $(".a-menu-feedback").addClass("a-menu-active");
   }
+};
+
+
+//count visiter
+let countVisiter = () => {
+  var obj = {a: "Hello", b: "World"};
+  saveText( JSON.stringify(obj), "filename.json" );
+}
+
+function saveText(text, filename){
+  var a = document.createElement('a');
+  a.setAttribute('href', 'data:text/plain;charset=utf-u,'+encodeURIComponent(text));
+  a.setAttribute('download', filename);
+  a.click()
 }
